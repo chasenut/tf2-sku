@@ -1,5 +1,7 @@
 # Parser for TF2 Stock Keeping Unit (sku)
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/chasenut/tf2-sku.svg)](https://pkg.go.dev/github.com/chasenut/tf2-sku)
+
 Go (Golang) package for parsing TF2 `sku`, commonly found in trading websites, APIs and bots.
 
 If you want to support me and my projects, here is my [Steam Trade Link](https://steamcommunity.com/tradeoffer/new/?partner=1487050196&token=2kpoTi1k).
