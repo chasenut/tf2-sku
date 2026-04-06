@@ -22,4 +22,20 @@ Import the package into your project.
 import "github.com/chasenut/tf2-sku"
 ```
 
-To
+To parse `sku` string to `*Item`, use the following:
+```
+item, err := tf2sku.FromSKU("1071;11")
+```
+
+To parse `*Item` to `sku` string, use the following:
+```
+sku := tf2sku.ToSKU(myItemPointer)
+```
+
+## Contributing
+Contributions are very welcomed, however please follow the below guidelines.
+
+- Feel free to open an issue describing the bug or enhancement so it can be
+discussed.  
+- Try to maintain the naming integrity present in this project.  
+- Create a Pull Request with your changes on the main branch.
