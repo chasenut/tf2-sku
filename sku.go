@@ -11,6 +11,8 @@ import (
 	"strings"
 )
 
+const QualityStrange = 11
+
 // Use NewItem function to get this.
 type Item struct {
 	Defindex		int
@@ -18,8 +20,8 @@ type Item struct {
 	Craftable		bool
 	Tradable		bool
 	Australium		bool
-	Strange 		bool
 	Festivized		bool
+	Quality2		int
 	Particle		int
 	Skin			int
 	KillstreakTier	int
@@ -45,6 +47,7 @@ type Item struct {
 //	- item.Tradable 		= true
 //	- item.Australium 		= false
 //	- item.Festivized 		= false
+//  - item.Quality2			= -1
 //	- item.Particle			= -1
 //	- item.Skin				= -1
 //	- item.KillstreakTier	= -1 
@@ -66,6 +69,7 @@ func NewItem() *Item {
 	item.Tradable 		= true
 	item.Australium 	= false
 	item.Festivized 	= false
+	item.Quality2		= -1
 	item.Particle		= -1
 	item.Skin			= -1
 	item.KillstreakTier	= -1 
@@ -130,7 +134,7 @@ func FromSKU(sku string) (*Item, error) {
 			item.Australium = true
 			continue
 		case "strange":
-			item.Strange = true
+			item.Quality2 = QualityStrange
 			continue
 		case "festive":
 			item.Festivized = true
@@ -259,7 +263,7 @@ func ToSKU(i *Item) string {
 	if i.Australium == true {
 		sku += ";australium"
 	}
-	if i.Strange == true {
+	if i.Quality2 == QualityStrange {
 		sku += ";strange"
 	}
 	if i.Festivized == true {

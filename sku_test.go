@@ -21,7 +21,7 @@ func TestFromSKU(t *testing.T) {
 	item3.Australium = true
 	item3.Craftable = false
 	item3.Tradable = false
-	item3.Strange =	true
+	item3.Quality2 = 11 // QualityStrange
 	item3.Festivized = true
 	item3.Particle = num4
 	item3.Skin = num3
@@ -97,7 +97,7 @@ func TestToSKU(t *testing.T) {
 	item3.Australium = true
 	item3.Craftable = false
 	item3.Tradable = false
-	item3.Strange =	true
+	item3.Quality2 = 11 // QualityStrange
 	item3.Festivized = true
 	item3.Particle = num4
 	item3.Skin = num3
