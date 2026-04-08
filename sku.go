@@ -38,7 +38,7 @@ type Item struct {
 
 // Returns new *Item struct
 //
-// Values < 0 are ignored in sku.
+// Values < 0 means not set.
 //
 // Sets the default values:
 //	- item.Defindex			= 0
@@ -50,7 +50,7 @@ type Item struct {
 //  - item.Quality2			= -1
 //	- item.Particle			= -1
 //	- item.Skin				= -1
-//	- item.KillstreakTier	= -1 
+//	- item.KillstreakTier	= 0 
 //	- item.Wear				= -1
 //	- item.TargetDefindex 	= -1
 //	- item.OutputDefindex	= -1
@@ -72,7 +72,7 @@ func NewItem() *Item {
 	item.Quality2		= -1
 	item.Particle		= -1
 	item.Skin			= -1
-	item.KillstreakTier	= -1 
+	item.KillstreakTier	= 0 
 	item.Wear			= -1
 	item.TargetDefindex = -1
 	item.OutputDefindex	= -1
@@ -276,7 +276,7 @@ func ToSKU(i *Item) string {
 	if i.Skin > -1 {
 		sku += fmt.Sprintf(";pk%v", i.Skin)
 	}
-	if i.KillstreakTier > -1 {
+	if i.KillstreakTier > 0 {
 		sku += fmt.Sprintf(";kt-%v", i.KillstreakTier)
 	}
 	if i.Wear > -1 {

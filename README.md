@@ -34,6 +34,73 @@ To parse `*Item` to `sku` string, use the following:
 sku := tf2sku.ToSKU(myItemPointer)
 ```
 
+### Examples
+
+```
+import "github.com/chasenut/tf2-sku"
+
+// SKU of a Mann Co. Supply Crate Key - 5021 is the defindex, 6 is the quality
+var sku = "5021;6"
+
+// Converts the sku string into an *Item
+var item = tf2sku.FromSKU(sku)
+/* ->
+&tf2sku.Item{
+	item.Defindex		= 5021
+	item.Quality		= 6
+	item.Craftable		= true
+	item.Tradable 		= true
+	item.Australium 	= false
+	item.Festivized 	= false
+    item.Quality2		= -1    // nil
+	item.Particle		= -1    // nil
+	item.Skin			= -1    // nil
+	item.KillstreakTier	= 0     // nil
+	item.Wear			= -1    // nil
+	item.TargetDefindex	= -1    // nil
+	item.OutputDefindex	= -1    // nil
+	item.OutputQuality	= -1    // nil
+	item.CraftNumber	= -1    // nil
+	item.CrateNumber	= -1    // nil
+	item.Paint			= -1    // nil
+	item.Sheen			= -1    // nil
+	item.Killstreaker	= -1    // nil
+}
+*/
+```
+
+```
+// Mann Co. Supply Crate Key
+var item = tf2sku.NewItem()
+/* ->
+&tf2sku.Item{
+	item.Defindex		= 5021
+	item.Quality		= 6
+	item.Craftable		= true
+	item.Tradable 		= true
+	item.Australium 	= false
+	item.Festivized 	= false
+    item.Quality2		= -1    // nil
+	item.Particle		= -1    // nil
+	item.Skin			= -1    // nil
+	item.KillstreakTier	= 0     // nil
+	item.Wear			= -1    // nil
+	item.TargetDefindex	= -1    // nil
+	item.OutputDefindex	= -1    // nil
+	item.OutputQuality	= -1    // nil
+	item.CraftNumber	= -1    // nil
+	item.CrateNumber	= -1    // nil
+	item.Paint			= -1    // nil
+	item.Sheen			= -1    // nil
+	item.Killstreaker	= -1    // nil
+}
+
+// Converts the *Item into an sku string
+var sku = tf2sku.ToSKU(&Item)
+// -> "5021;6"
+```
+
+
 ## Contributing
 Contributions are very welcomed, however please follow the below guidelines.
 
