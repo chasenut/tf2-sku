@@ -5,7 +5,6 @@
 Go (Golang) package for parsing TF2 `sku`, commonly found in trading websites, APIs and bots.
 
 If you want to support me and my projects, here is my [Steam Trade Link](https://steamcommunity.com/tradeoffer/new/?partner=1487050196&token=2kpoTi1k).
-You can also support me by joining my [Discord Server](https://discord.gg/YjXvX7WfzS).
 
 ## Getting started
 
@@ -13,30 +12,30 @@ You can also support me by joining my [Discord Server](https://discord.gg/YjXvX7
 
 This assumes you already have a working Go environment. 
 To pull the _the latest_ version from the main branch, use:
-```
+```sh
 go get github.com/chasenut/tf2-sku
 ```
 
 ### Usage
 
 Import the package into your project.
-```
+```go
 import "github.com/chasenut/tf2-sku"
 ```
 
 To parse `sku` string to `*Item`, use the following:
-```
+```go
 item, err := tf2sku.FromSKU("1071;11")
 ```
 
 To parse `*Item` to `sku` string, use the following:
-```
+```go
 sku := tf2sku.ToSKU(myItemPointer)
 ```
 
 ### Examples
 
-```
+```go
 import "github.com/chasenut/tf2-sku"
 
 // SKU of a Mann Co. Supply Crate Key - 5021 is the defindex, 6 is the quality
@@ -69,7 +68,7 @@ var item = tf2sku.FromSKU(sku)
 */
 ```
 
-```
+```go
 // Mann Co. Supply Crate Key
 var item = tf2sku.NewItem()
 /* ->
